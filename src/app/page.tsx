@@ -3,7 +3,7 @@ export default function Home() {
     <div className="space-y-8">
       <h1 className="text-4xl font-bold">WiredByWeather</h1>
       <p className="text-lg">
-        Welcome to WiredByWeather: advancing science, education, and peace. Website development in progress. 6/16/2025. Stay tuned.
+        Welcome to WiredByWeather: advancing science, education, and global unity. Website development in progress. 6/16/2025. Stay tuned.
       </p>
 
       <div className="grid grid-cols-2 gap-4">
