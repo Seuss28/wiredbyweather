@@ -4,8 +4,8 @@ export default function Home() {
       <h1 className="text-4xl font-bold">WiredByWeather</h1>
       <p className="text-lg">
         Welcome to Wired by Weather: advancing science, education, and global unity.
- 	Website development in progress. 6/16/2025. 
-	Stay tuned.
+ 	<br />Website development in progress. 6/16/2025. 
+	<br />Stay tuned.
       </p>
 
       <div className="grid grid-cols-2 gap-4">
