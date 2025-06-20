@@ -33,7 +33,7 @@ export default function Home() {
       </p>
 
       <div className="grid grid-cols-2 gap-4">
-        <div className="p-4 bg-accent text-black rounded">Funds Donated</div>
+        <div className="p-4 bg-accent text-black rounded">Supporters</div>
         <div className="p-4 bg-accent text-black rounded">Countries Covered</div>
         <div className="p-4 bg-accent text-black rounded">Episodes Published</div>
         <div className="p-4 bg-accent text-black rounded">Comments Submitted</div>
