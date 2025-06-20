@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* You can still add any of your custom styles below */
-:root {:root {
+:root {
   --background: #f6f3eb;
   --foreground: #1e1e1e;
   --accent: #e2ded1;
