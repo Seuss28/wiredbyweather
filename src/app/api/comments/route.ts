@@ -1,11 +1,26 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
+import fs from 'fs'
+import path from 'path'
 
-export async function POST(req: NextRequest) {
-  const { comment } = await req.json();
+export async function POST(request: Request) {
+  try {
+    const { comment } = await request.json()
 
-  // Placeholder logic: in production, this will save to file/db
-  console.log('New comment submitted:', comment);
+    if (!comment || typeof comment !== 'string') {
+      return NextResponse.json({ error: 'No valid comment provided' }, { status: 400 })
+    }
 
-  return NextResponse.json({ success: true });
+    // Format a safe timestamp for the filename
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+    const filename = path.join(process.cwd(), 'comments', `${timestamp}.txt`)
+
+    // Write the comment to a file
+    fs.writeFileSync(filename, comment, 'utf-8')
+
+    return NextResponse.json({ message: 'Comment saved successfully!' }, { status: 200 })
+  } catch (err) {
+    console.error('Error saving comment:', err)
+    return NextResponse.json({ error: 'Failed to save comment' }, { status: 500 })
+  }
 }
 

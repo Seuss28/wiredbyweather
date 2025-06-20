@@ -1,9 +1,17 @@
-export default function Newsletter() {
-  return (
-    <div className="space-y-8">
-      <h1 className="text-4xl font-bold">Newsletter</h1>
-      <p className="text-lg">Monthly blog-style news with interactive PDF reader.</p>
-    </div>
-  );
-}
+import NewsletterSwiper from '@/components/ui/NewsletterSwiper'
 
+export default function NewsletterPage() {
+  const newsletters = [
+    {
+      title: "June 2025 Edition",
+      pdfUrls: ["/newsletters/june-2025-p1.pdf", "/newsletters/june-2025-p2.pdf"]
+    }
+  ]
+
+  return (
+    <div className="p-6 bg-background text-foreground space-y-6">
+      <h1 className="text-3xl font-bold">Monthly Newsletter</h1>
+      <NewsletterSwiper newsletters={newsletters} />
+    </div>
+  )
+}

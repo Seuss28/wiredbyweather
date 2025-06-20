@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 /* You can still add any of your custom styles below */
+:root {:root {
+  --background: #f6f3eb;
+  --foreground: #1e1e1e;
+  --accent: #e2ded1;
+  --border: #bdb8aa;
+  --secondary: #4a463f;
+  --highlight: #877f6c;
+  --link: #3a6ea5;
+  --hover: #2f4f72;
+}
 
 body {
   background-color: var(--background);
