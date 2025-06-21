@@ -6,8 +6,8 @@
 :root {
   --background: #f4f1e8;
   --foreground: #1a1a1a;
-  --accent: #d81b60;       /* Magenta */
-  --secondary: #b2fab4;    /* Pale Green */
+  --accent: #ffd54f;       /* Warm gold for highlights */
+  --secondary: #0d47a1;    /* Pale Green #b2fab4 replace with deep blue for CTAs*/
   --font-sans: 'Arial', sans-serif;
 }
 
@@ -15,8 +15,8 @@
   :root {
     --background: #1a1a1a;
     --foreground: #f4f1e8;
-    --accent: #ff4081;
-    --secondary: #c8e6c9;
+    --accent: #ddeb3b;
+    --secondary: #90caf9:;
   }
 }
 
@@ -42,5 +42,5 @@ button {
 }
 
 button:hover {
-  background-color: #a5d6a7;
+  background-color: #0b3c91;
 }
