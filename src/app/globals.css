@@ -6,7 +6,7 @@
 :root {
   --background: #f4f1e8;
   --foreground: #1a1a1a;
-  --accent: #1192A2;       /* blueish */
+  --accent: #20B9CC;       /* blueish */
   --secondary: #0d47a1;    /* Pale Green #b2fab4 replace with deep blue for CTAs*/
   --font-sans: 'Arial', sans-serif;
 }
@@ -15,7 +15,7 @@
   :root {
     --background: #1a1a1a;
     --foreground: #f4f1e8;
-    --accent: #1192A2;
+    --accent: #20B9CC;
     --secondary: #90caf9:;
   }
 }
