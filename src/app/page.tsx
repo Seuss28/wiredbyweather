@@ -42,7 +42,7 @@ export default function Home() {
         <label htmlFor="comment">Share your vision for peace & science:</label>
         <textarea
           id="comment"
-          className="b-full p-2 rounded border"
+          className="w-full p-2 rounded border"
           rows={4}
           value={comment}
           onChange={(e) => setComment(e.target.value)}
