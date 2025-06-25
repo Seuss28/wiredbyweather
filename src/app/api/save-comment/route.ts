@@ -1,29 +1,27 @@
-import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs/promises'
+// src/app/api/save-comment/route.ts
+
+import { NextResponse } from 'next/server'
+import fs from 'fs'
 import path from 'path'
 
-export async function POST(req: NextRequest) {
-  const data = await req.json()
-  const { comment, episode } = data
-
-  if (!comment || comment.trim() === '') {
-    return NextResponse.json({ error: 'Empty comment' }, { status: 400 })
-  }
-
-  const folderName = episode ? `episode-${episode}` : 'general'
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-  const fileName = `comment-${timestamp}.txt`
-
-  const commentsDir = path.join(process.cwd(), 'public', 'comments', folderName)
-  const filePath = path.join(commentsDir, fileName)
-
+export async function POST(req: Request) {
   try {
-    await fs.mkdir(commentsDir, { recursive: true })
-    await fs.writeFile(filePath, comment)
-    return NextResponse.json({ status: 'ok' })
+    const { comment, episode } = await req.json()
+
+    // Choose folder based on presence of 'episode'
+    const folder = episode ? `public/comments/${episode}` : 'public/comments/general'
+
+    const dir = path.join(process.cwd(), folder)
+    fs.mkdirSync(dir, { recursive: true })
+
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+    const filename = path.join(dir, `${timestamp}.txt`)
+    fs.writeFileSync(filename, comment, 'utf8')
+
+    return NextResponse.json({ message: 'Saved successfully' }, { status: 200 })
   } catch (err) {
-    console.error('Failed to save comment:', err)
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+    console.error('Error saving comment:', err)
+    return NextResponse.json({ error: 'Failed to save comment' }, { status: 500 })
   }
 }
 
